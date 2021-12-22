@@ -1,0 +1,43 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  background: var(--white);
+  margin: 1rem 0;
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+      width: 84px;
+      height: 84px;
+      border-radius: 42px;
+    }
+
+    .contentOfProfile {
+      margin: 0 1rem;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--black);
+        margin-bottom: 0.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--gray);
+      }
+    }
+  }
+
+  a {
+    font-size: 1.5rem;
+    color: var(--gray);
+  }
+}
