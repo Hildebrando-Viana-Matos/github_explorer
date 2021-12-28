@@ -24,34 +24,8 @@ export function Home() {
           </div>
 
           <Card
-            profile={{
-              avatar: "https://www.github.com/Hildebrando-Viana-Matos.png",
-              name: "Hildebrando Viana Matos",
-            }}
-            repository={{
-              uid: "ASONAOIBNOFNnoisadnao",
-              name: "hildebrando-viana-matos/letmeask",
-              description:
-                "This is a super project that I've made on NLW bootcamp",
-            }}
-          />
-          <Card
-            profile={{
-              avatar: "https://www.github.com/Hildebrando-Viana-Matos.png",
-              name: "Hildebrando Viana Matos",
-            }}
-            repository={{
-              uid: "ASONAOIBNOFNnoisadnao",
-              name: "hildebrando-viana-matos/letmeask",
-              description:
-                "This is a super project that I've made on NLW bootcamp",
-            }}
-          />
-          <Card
-            profile={{
-              avatar: "https://www.github.com/Hildebrando-Viana-Matos.png",
-              name: "Hildebrando Viana Matos",
-            }}
+            avatar={"https://www.github.com/Hildebrando-Viana-Matos.png"}
+            name={"Hildebrando Viana Matos"}
             repository={{
               uid: "ASONAOIBNOFNnoisadnao",
               name: "hildebrando-viana-matos/letmeask",
