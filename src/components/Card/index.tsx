@@ -7,6 +7,7 @@ import "./styles.scss";
 type CardProps = {
   avatar?: string;
   name?: string;
+  url?: string;
   repository: {
     uid: string;
     name: string;
