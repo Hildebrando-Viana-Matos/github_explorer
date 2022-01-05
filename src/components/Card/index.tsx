@@ -6,12 +6,13 @@ import "./styles.scss";
 
 type CardProps = {
   avatar?: string;
-  name?: string;
-  url?: string;
+  name: string;
   repository: {
-    uid: string;
+    node_id: string;
+    full_name: string;
     name: string;
     description: string;
+    url: string;
   };
 };
 
@@ -26,11 +27,11 @@ export function Card(props: CardProps) {
           />
         )}
         <div className="contentOfProfile">
-          <h2>{props.repository.name}</h2>
+          <h2>{props.repository.full_name}</h2>
           <p>{props.repository.description}</p>
         </div>
       </div>
-      <Link to={props.repository.uid}>
+      <Link to={props.repository.url}>
         <FiChevronRight />
       </Link>
     </div>

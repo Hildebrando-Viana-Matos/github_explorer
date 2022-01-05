@@ -38,14 +38,6 @@ export function Profile() {
               </div>
             </div>
           </div>
-          <Card
-            repository={{
-              uid: "ASONAOIBNOFNnoisadnao",
-              name: "hildebrando-viana-matos/letmeask",
-              description:
-                "This is a super project that I've made on NLW bootcamp",
-            }}
-          />
         </div>
       </main>
     </div>

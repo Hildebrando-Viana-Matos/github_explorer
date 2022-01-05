@@ -6,20 +6,35 @@ import { Octokit } from "@octokit/core";
 
 import "../styles/home.scss";
 
+type RepositoryData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  html_url: string;
+  description: string;
+  owner: {
+    avatar_url: string;
+    login: string;
+  };
+};
+
 export function Home() {
   const [repository, setRepository] = useState("");
-  const [repositoryResult, setRepositoryResult] = useState({});
+  const [data, setData] = useState<RepositoryData[]>([]);
 
   async function handleSearchRepository(event: FormEvent) {
     event.preventDefault();
     const octokit = new Octokit({
-      auth: `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`,
+      auth: `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`,
     });
 
     const response = await octokit.request("GET /search/repositories", {
       q: "letmeask",
     });
-    console.log(response);
+    const data1 = response.data.items as RepositoryData[];
+
+    setData(data1);
   }
 
   return (
@@ -40,17 +55,22 @@ export function Home() {
               <button type="submit">Pesquisar</button>
             </form>
           </div>
-
-          <Card
-            avatar={"https://www.github.com/Hildebrando-Viana-Matos.png"}
-            name={"Hildebrando Viana Matos"}
-            repository={{
-              uid: "ASONAOIBNOFNnoisadnao",
-              name: "hildebrando-viana-matos/letmeask",
-              description:
-                "This is a super project that I've made on NLW bootcamp",
-            }}
-          />
+          {data.map((repository) => {
+            return (
+              <Card
+                key={repository.id}
+                avatar={repository.owner.avatar_url}
+                name={repository.owner.login}
+                repository={{
+                  node_id: repository.node_id,
+                  full_name: repository.full_name,
+                  name: repository.name,
+                  description: repository.description,
+                  url: repository.html_url,
+                }}
+              />
+            );
+          })}
         </div>
       </main>
     </>
