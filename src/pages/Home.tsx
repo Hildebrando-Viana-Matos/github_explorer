@@ -25,16 +25,19 @@ export function Home() {
 
   async function handleSearchRepository(event: FormEvent) {
     event.preventDefault();
+    if (repository === "") {
+      return;
+    }
     const octokit = new Octokit({
-      auth: `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`,
+      auth: process.env.GITHUB_TOKEN,
     });
 
     const response = await octokit.request("GET /search/repositories", {
-      q: "letmeask",
+      q: repository,
     });
-    const data1 = response.data.items as RepositoryData[];
+    const dataRepository = response.data.items as RepositoryData[];
 
-    setData(data1);
+    setData(dataRepository);
   }
 
   return (
@@ -51,6 +54,8 @@ export function Home() {
                 name="searchRepository"
                 id="searchRepository"
                 placeholder="Digite aqui"
+                onChange={(event) => setRepository(event.target.value)}
+                value={repository}
               />
               <button type="submit">Pesquisar</button>
             </form>

@@ -23,15 +23,17 @@ export function Card(props: CardProps) {
         {props.avatar && (
           <img
             src={props.avatar}
-            alt={`Foto de perfil de ${props.avatar} no GitHub`}
+            alt={`Foto de perfil de ${props.name} no GitHub`}
           />
         )}
         <div className="contentOfProfile">
-          <h2>{props.repository.full_name}</h2>
+          <a href={props.repository.url} target="_blank">
+            <h2>{props.repository.full_name}</h2>
+          </a>
           <p>{props.repository.description}</p>
         </div>
       </div>
-      <Link to={props.repository.url}>
+      <Link to={`profile:${props.repository.node_id}`}>
         <FiChevronRight />
       </Link>
     </div>
