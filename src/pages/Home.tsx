@@ -67,6 +67,7 @@ export function Home() {
                 avatar={repository.owner.avatar_url}
                 name={repository.owner.login}
                 repository={{
+                  id: repository.id,
                   node_id: repository.node_id,
                   full_name: repository.full_name,
                   name: repository.name,

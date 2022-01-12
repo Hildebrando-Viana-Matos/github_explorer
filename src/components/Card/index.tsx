@@ -8,6 +8,7 @@ type CardProps = {
   avatar?: string;
   name: string;
   repository: {
+    id: number;
     node_id: string;
     full_name: string;
     name: string;
@@ -33,7 +34,7 @@ export function Card(props: CardProps) {
           <p>{props.repository.description}</p>
         </div>
       </div>
-      <Link to={`profile:${props.repository.node_id}`}>
+      <Link to={`/${props.name}&${props.repository.name}`}>
         <FiChevronRight />
       </Link>
     </div>
