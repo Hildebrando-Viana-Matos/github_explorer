@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import "../styles/profile.scss";
 import { useEffect, useState } from "react";
 import { Octokit } from "@octokit/core";
+import { Link } from "react-router-dom";
 
 type RepositoryData = {
   id: number;
@@ -79,6 +80,7 @@ export function Profile() {
   useEffect(() => {
     getRepository(userName as string, repositoryName as string);
     getUserRepositories(userName as string);
+    document.title = `${repositoryName} - GitHub Explorer`;
   }, []);
 
   return (
@@ -93,7 +95,9 @@ export function Profile() {
                 alt={`Foto de ${data?.owner.login} do Github`}
               />
               <div className="textProfile">
-                <h1>{data?.full_name}</h1>
+                <a href={data?.html_url} target="_blank">
+                  <h1>{data?.full_name}</h1>
+                </a>
                 <p>{data?.description}</p>
               </div>
             </div>
