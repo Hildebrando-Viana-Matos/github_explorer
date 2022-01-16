@@ -1,45 +1,93 @@
 main {
   margin: 5rem 0;
+
   .profileRepository {
     margin: 1rem 0 5rem 0;
 
     .imgProfileRepository {
       display: flex;
       align-items: center;
-  
+
+      @media (max-width: 500px) {
+        flex-direction: column;
+        justify-content: center;
+      }
+
       img {
         width: 120px;
         height: 120px;
         border-radius: 60px;
+
+        @media (max-width: 500px) {
+          width: 320px;
+          height: 320px;
+          border-radius: 160px;
+          margin: 1rem 0;
+        }
+
+        @media (max-width: 320px) {
+          width: 120px;
+          height: 120px;
+          border-radius: 60px;
+          margin: 1rem 0;
+        }
       }
-  
+
       .textProfile {
         margin-left: 1rem;
-  
+
         h1 {
           font-size: 2.25rem;
           font-weight: 700;
           color: var(--black);
           margin-bottom: 10px;
+
+          @media (max-width: 700px) {
+            font-size: 1.5rem;
+          }
+
+          @media (max-width: 400px) {
+            font-size: 1.25rem;
+          }
         }
-  
+
         p {
           font-size: 1.25rem;
           font-weight: 400;
           color: var(--gray);
+
+          @media (max-width: 700px) {
+            font-size: 1rem;
+          }
+
+          @media (max-width: 400px) {
+            font-size: 0.8rem;
+          }
         }
       }
     }
-  
+
     .infoRepository {
       margin-top: 2.25rem;
       display: flex;
       align-items: flex-start;
-  
-      .info {
 
-        & + .info {
-          margin-left: 5rem;
+      @media (max-width: 400px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .info {
+        @media (min-width: 400px) {
+          & + .info {
+            margin-left: 5rem;
+          }
+        }
+
+        @media (max-width: 400px) {
+          margin: 0.5rem 0;
+          text-align: center;
         }
 
         h2 {
@@ -48,7 +96,7 @@ main {
           color: var(--black);
           margin-bottom: 5px;
         }
-  
+
         span {
           font-size: 1.25rem;
           font-weight: 400;
@@ -56,6 +104,5 @@ main {
         }
       }
     }
-  
   }
 }
