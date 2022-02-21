@@ -15,6 +15,7 @@ type CardProps = {
     description: string;
     url: string;
   };
+  goToGithub?: boolean;
 };
 
 export function Card(props: CardProps) {
@@ -34,9 +35,15 @@ export function Card(props: CardProps) {
           <p>{props.repository.description}</p>
         </div>
       </div>
-      <Link to={`/${props.name}&${props.repository.name}`}>
-        <FiChevronRight />
-      </Link>
+      {props.goToGithub ? (
+        <a href={props.repository.url} target="_blank">
+          <FiChevronRight />
+        </a>
+      ) : (
+        <Link to={`/${props.name}&${props.repository.name}`}>
+          <FiChevronRight />
+        </Link>
+      )}
     </div>
   );
 }

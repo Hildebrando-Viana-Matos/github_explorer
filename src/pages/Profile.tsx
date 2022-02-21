@@ -129,6 +129,7 @@ export function Profile() {
                   description: repository.description,
                   url: repository.html_url,
                 }}
+                goToGithub={true}
               />
             );
           })}
