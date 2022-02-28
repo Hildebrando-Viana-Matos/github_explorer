@@ -1,5 +1,5 @@
  <a href="https://github.com/Hildebrando-Viana-Matos/github_explorer">
-    <img align="center" src="https://github.com/Hildebrando-Viana-Matos/github_explorer/tree/main/public/banner_readme.png" alt="banner GitHub Explorer">
+    <img align="center" src="./public/banner_readme.png" alt="banner GitHub Explorer">
  </a>
  
 <details open="open">
